@@ -250,7 +250,9 @@
                                 if (window.cordova.file) {
                                     switch (device.platform) {
                                         case 'iOS':
-                                            return $window.cordova.file.documentsDirectory;
+                                            //https://github.com/BenBBear/ionic-cache-src/issues/24
+                                            //WKWebView support
+                                            return $window.cordova.file.documentsDirectory.substring(7);
                                         case 'Android':
                                             return $window.cordova.file.dataDirectory;
                                         case 'windows':
